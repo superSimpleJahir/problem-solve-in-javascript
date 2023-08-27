@@ -34,6 +34,47 @@ b.forEach((val) => {
 })
 console.log(sum1);
 
+// map - jodi kono array ar protekta memberke akti opration kore notun arrayte rupantor korar jonne map use kora hoi
+// map ar structure akebare forEach ar moto. akhane return kortei hobe.
+let array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let ans1 = array.map((val) => {
+  return (`${val * 2}, jahir`);
+})
+console.log(ans1);
+
+// akti array ar sokol elemnt ke ar lenth chake kore jodi element ar lenth 5 hoi tahole atike p tage ar bitore rakhte hobe r jodi 5 ar besi ba kom hoi tahole span tahge ar bitore rakhtehobe
+let nameList = ['jahir', 'Md jahirul', 'mijan', 'md mijan', 'apple', 'dog', 'cat'];
+let newName = nameList.map((val) => {
+  if (val.length === 5) {
+    return `<p>${val}</p>`
+  } else return `<spane>${val}</spane>`;
+})
+console.log(newName);
+
+// ek array of object ace oi array onek gula object ace okhantheke sokol name dia akti array make koro;
+let myarray = [
+  { name: 'jahir', age: 24, job: 'student' },
+  { name: 'Mijan', age: 25, job: 'student' },
+  { name: 'arif', age: 20, job: 'student' },
+  { name: 'Jahid', age: 28, job: 'Teacher' },
+  { name: 'Saifulla', age: 26, job: 'Walton' },
+  { name: 'sutan', age: 42, job: 'Leber' }
+];
+let arrayList = myarray.map((val) => {
+  return { Name: val.name };
+})
+console.log(arrayList);
+let arrayList1 = myarray.map((val) => {
+  return val.age;
+})
+console.log(arrayList1);
+let arrayList2 = myarray.map((val) => {
+  return val.job;
+})
+console.log(arrayList2);
+
+
+
 // 5 amon akta function make korte hobe je ati input nibe. inpute jodi array thake tahole true return korbe r onno sob khetre false return kotbe
 function chackArray(inp) {
   console.log(Array.isArray(inp));
