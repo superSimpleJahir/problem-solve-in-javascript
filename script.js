@@ -6,11 +6,11 @@ a.forEach(function (val) {
   console.log(val + 2);
 });
 
-// 1 Foreach ব্যবহার করে প্রত্যেকটা এলিমেন্ট এর সামনে 'Hello' প্রিন্ট করো 
+// 1 Foreach ব্যবহার করে প্রত্যেকটা এলিমেন্ট এর সামনে 'Hello' প্রিন্ট করো
 a.forEach((val) => {
   console.log(`Hello ${val}`);
 })
-// 2, একই Array  প্রিন্ট করো যার ভ্যালু 7 এর চেয়ে কম 
+// 2, একই Array  প্রিন্ট করো যার ভ্যালু 7 এর চেয়ে কম
 a.forEach((val) => {
   if (val <= 7) {
     console.log(val);
@@ -34,7 +34,84 @@ b.forEach((val) => {
 })
 console.log(sum1);
 
+// 5 amon akta function make korte hobe je ati input nibe. inpute jodi array thake tahole true return korbe r onno sob khetre false return kotbe
+function chackArray(inp) {
+  console.log(Array.isArray(inp));
+}
+chackArray(['hello']);
+chackArray('hello');
+chackArray(true);
+chackArray(9);
+let arr = ['jahir', 'mijan', 'arif'];
+chackArray(arr);
+chackArray({});
+// another wey this problem solve
 
+function chackArray1(inp) {
+  console.log(inp instanceof Array);
+}
+chackArray(['hello']);
+chackArray('hello');
+chackArray(true);
+chackArray(9);
+chackArray(arr);
+chackArray({});
+
+//6 amon akti function make korte hobe(function name cloning) jekhane akti input thakbe. input a je array pass korbe setai ai function print korbe
+
+function cloning(inp) {
+  let cloned = [...inp]
+  console.log(cloned);
+}
+cloning([1, 2, 3, 4, [5, 6, 7], 8, 9]);
+
+let arr1 = [1, 23, 4, 5, 6, 7,];
+let arr2 = [1, 3, 76, 766, 722,];
+let arr3 = [...arr1, ...arr2];
+console.log(arr3);
+
+// 7 amon kati function make korte hobe jetar 2 ti inpute thakbe first input hobe array 2nd input hobe array theke koiti element apni array hisabe return chan.
+
+function getter(inp, get = 1) {
+  let cloned = [];
+  for (let i = 0; i < get; i++) {
+    cloned.push(inp[i]);
+  }
+  console.log(cloned);
+}
+getter([1, 2, 3, 4, 5, 6, 7, 8, 9], 4);
+
+// 8 amon akti function make ai function akti parameter thakbe array hisabe, ai function ar inpute je array thake function return korbe string separet by , + or ' ' space.
+function joiner(inp) {
+  console.log(inp.join('+'));
+}
+joiner(['jahir', 'mijan']);
+
+// 9 how many waye to create an Object
+let a1 = {}  // 1 objhect literal
+let a2 = Object.caller(null); // 2 by using object create method
+
+function funname() { // 3 this is function object
+  this.name = 'jahir';
+}
+let obj3 = new funname();
+console.log(obj3); // funname {name: 'jahir'}
+
+class abcd { //4 this is an array
+  constructor() { };
+  a = 12;
+}
+let ans = new abcd();
+console.log(ans); // abcd {a: 12}
+
+// hof = higher order function
+function abcde(inp1) {
+  return function (inp2) {
+    return inp1 + inp2;
+  }
+}
+
+console.log(abcde(10)(30));
 
 
 // Objects - access loop
